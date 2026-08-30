@@ -30,7 +30,15 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=1.2" />
+
+  <!-- Instant Theme Script -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
 </head>
 
 <body>
@@ -55,7 +63,7 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-right-group">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode" title="Toggle Theme">
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light and dark mode" title="Toggle Theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -623,7 +631,7 @@
   </button>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
+  <script src="script.js?v=1.2"></script>
 </body>
 
 </html>

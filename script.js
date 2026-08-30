@@ -1,6 +1,15 @@
-/* ============================================
-   Prakash Kumar Portfolio — Main JavaScript
-   ============================================ */
+// Global Theme Toggle Function
+function toggleTheme() {
+  var html = document.documentElement;
+  var currentTheme = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  html.setAttribute('data-theme', newTheme);
+  if (document.body) {
+    document.body.setAttribute('data-theme', newTheme);
+  }
+  localStorage.setItem('theme', newTheme);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Lucide icons
@@ -14,14 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Apply stored theme on initial load
   document.documentElement.setAttribute('data-theme', storedTheme);
+  if (document.body) {
+    document.body.setAttribute('data-theme', storedTheme);
+  }
 
   if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
+    themeToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleTheme();
     });
   }
 

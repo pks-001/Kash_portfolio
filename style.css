@@ -274,6 +274,12 @@ img {
   cursor: pointer;
   transition: all var(--transition-medium);
   outline: none;
+  position: relative;
+  z-index: 1002;
+}
+
+.theme-toggle svg {
+  pointer-events: none;
 }
 
 .theme-toggle:hover {
