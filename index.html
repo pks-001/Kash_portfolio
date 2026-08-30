@@ -30,14 +30,25 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1.2" />
+  <link rel="stylesheet" href="style.css?v=2.0" />
 
-  <!-- Instant Theme Script -->
+  <!-- Instant Theme Script & Global Toggle -->
   <script>
     (function () {
       var saved = localStorage.getItem('theme') || 'dark';
       document.documentElement.setAttribute('data-theme', saved);
     })();
+
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      if (document.body) {
+        document.body.setAttribute('data-theme', next);
+      }
+      localStorage.setItem('theme', next);
+    }
   </script>
 </head>
 
@@ -631,7 +642,7 @@
   </button>
 
   <!-- Scripts -->
-  <script src="script.js?v=1.2"></script>
+  <script src="script.js?v=2.0"></script>
 </body>
 
 </html>

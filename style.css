@@ -7,37 +7,31 @@
 
 /* ---------- CSS Custom Properties (Dark Theme Default) ---------- */
 :root {
-  /* Greys & Backgrounds */
   --bg-primary: #0f0f0f;
   --bg-secondary: #1a1a1a;
   --bg-tertiary: #242424;
   --bg-card: rgba(255, 255, 255, 0.04);
   --bg-card-hover: rgba(255, 255, 255, 0.08);
 
-  /* Glass */
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-  /* Text */
   --text-primary: #ffffff;
   --text-secondary: #b0b0b0;
   --text-muted: #6b6b6b;
   --text-accent: #e0e0e0;
 
-  /* Accent */
   --accent: #888888;
   --accent-light: #aaaaaa;
   --accent-glow: rgba(255, 255, 255, 0.15);
 
-  /* Gradients */
   --gradient-subtle: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
-  --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
-  --gradient-line: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --gradient-line: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   --gradient-hero: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
   --hero-name-gradient: linear-gradient(135deg, #ffffff 0%, #888888 100%);
 
-  /* UI Component Colors */
   --navbar-bg-scrolled: rgba(15, 15, 15, 0.85);
   --mobile-menu-bg: rgba(15, 15, 15, 0.97);
   --btn-primary-bg: #ffffff;
@@ -48,32 +42,29 @@
   --tag-bg: #242424;
   --tag-border: rgba(255, 255, 255, 0.06);
 
-  /* Spacing */
   --section-padding: 100px 0;
   --container-width: 1200px;
-
-  /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Border Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 28px;
 }
 
-/* ---------- Light Theme ---------- */
-[data-theme="light"] {
-  --bg-primary: #f8f9fa;
+/* ---------- Light Theme Overrides ---------- */
+[data-theme="light"],
+html[data-theme="light"],
+body[data-theme="light"] {
+  --bg-primary: #f5f6f8;
   --bg-secondary: #ffffff;
-  --bg-tertiary: #f0f2f5;
-  --bg-card: rgba(0, 0, 0, 0.02);
-  --bg-card-hover: rgba(0, 0, 0, 0.05);
+  --bg-tertiary: #ebedf2;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f2f5;
 
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 0, 0, 0.09);
+  --glass-bg: #ffffff;
+  --glass-border: rgba(0, 0, 0, 0.08);
   --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 
   --text-primary: #121212;
@@ -81,25 +72,25 @@
   --text-muted: #767676;
   --text-accent: #222222;
 
-  --accent: #666666;
-  --accent-light: #333333;
+  --accent: #555555;
+  --accent-light: #222222;
   --accent-glow: rgba(0, 0, 0, 0.08);
 
   --gradient-subtle: linear-gradient(135deg, #ffffff 0%, #f4f4f6 50%, #ffffff 100%);
-  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 248, 0.85) 100%);
-  --gradient-line: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
-  --gradient-hero: linear-gradient(180deg, #f8f9fa 0%, #ebeef2 100%);
-  --hero-name-gradient: linear-gradient(135deg, #111111 0%, #555555 100%);
+  --gradient-card: linear-gradient(145deg, #ffffff 0%, #f4f5f8 100%);
+  --gradient-line: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.15), transparent);
+  --gradient-hero: linear-gradient(180deg, #f5f6f8 0%, #e6e9ef 100%);
+  --hero-name-gradient: linear-gradient(135deg, #111111 0%, #444444 100%);
 
-  --navbar-bg-scrolled: rgba(248, 249, 250, 0.88);
+  --navbar-bg-scrolled: rgba(245, 246, 248, 0.92);
   --mobile-menu-bg: rgba(255, 255, 255, 0.98);
   --btn-primary-bg: #121212;
   --btn-primary-text: #ffffff;
   --btn-primary-hover: #2a2a2a;
   --form-input-bg: #f0f2f5;
   --form-input-border: rgba(0, 0, 0, 0.12);
-  --tag-bg: #f0f2f5;
-  --tag-border: rgba(0, 0, 0, 0.08);
+  --tag-bg: #ebedf2;
+  --tag-border: rgba(0, 0, 0, 0.06);
 }
 
 /* ---------- Reset & Base ---------- */
@@ -216,7 +207,7 @@ img {
 .nav-right-group {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .nav-links {
@@ -260,26 +251,28 @@ img {
 
 /* Theme Toggle Button */
 .theme-toggle {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 1px solid var(--glass-border);
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: var(--text-primary);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all var(--transition-medium);
+  transition: all var(--transition-fast);
   outline: none;
   position: relative;
   z-index: 1002;
+  box-shadow: var(--glass-shadow);
 }
 
 .theme-toggle svg {
   pointer-events: none;
+  transition: transform 0.3s ease;
 }
 
 .theme-toggle:hover {
@@ -342,6 +335,7 @@ img {
   position: relative;
   overflow: hidden;
   background: var(--gradient-hero);
+  transition: background var(--transition-medium);
 }
 
 .hero-canvas {
@@ -488,6 +482,8 @@ img {
   color: var(--text-secondary);
   transition: all var(--transition-medium);
   font-size: 1.1rem;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
 }
 
 .hero-socials a:hover {
@@ -513,6 +509,7 @@ img {
   border: 2px solid var(--glass-border);
   position: relative;
   background: var(--gradient-card);
+  box-shadow: var(--glass-shadow);
 }
 
 .hero-image-container img {
@@ -611,6 +608,7 @@ img {
   border: 1px solid var(--glass-border);
   background: var(--gradient-card);
   position: relative;
+  box-shadow: var(--glass-shadow);
 }
 
 .about-image-card img {
@@ -680,7 +678,7 @@ img {
 .stat-card:hover {
   background: var(--bg-card-hover);
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .stat-number {
@@ -717,7 +715,7 @@ img {
 
 .skill-category:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(255,255,255,0.15);
+  border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-4px);
 }
 
@@ -786,7 +784,7 @@ img {
 
 .project-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(255,255,255,0.2);
+  border-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
@@ -835,7 +833,7 @@ img {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
   color: white;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all var(--transition-fast);
   font-size: 1.1rem;
 }
@@ -952,7 +950,7 @@ img {
 
 .timeline-card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(255,255,255,0.2);
+  border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-4px);
 }
 
@@ -1016,7 +1014,7 @@ img {
 
 .cert-card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(255,255,255,0.2);
+  border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-6px);
   box-shadow: var(--glass-shadow);
 }
@@ -1104,7 +1102,7 @@ img {
 .contact-item:hover {
   background: var(--bg-card-hover);
   transform: translateX(8px);
-  border-color: rgba(255,255,255,0.15);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .contact-item-icon {
@@ -1280,6 +1278,7 @@ img {
   color: var(--text-muted);
   transition: all var(--transition-medium);
   font-size: 1rem;
+  background: var(--glass-bg);
 }
 
 .footer-social-icons a:hover {
@@ -1541,7 +1540,7 @@ img {
 .back-to-top:hover {
   background: var(--bg-card-hover);
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ============================================
